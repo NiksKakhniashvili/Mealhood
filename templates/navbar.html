@@ -1,13 +1,18 @@
 <nav>
-    <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li class = 'nav-item'>
-            <a class = 'nav-link' href="{% url 'login' %}">
-                Login
-            </a>
-        </li>
+    <div class="nav-item">
+        <a class = 'nav-link' href="{% url 'home' %}">Home</a></div>
+    <div>Two</div>
+    <div class = 'nav-item'>
+        <a class = 'nav-link' href="{% url 'login' %}">
+            Login
+        </a>
+    </div>
+    <div class = 'nav-item'>
+        <a class="nav-link" href="{%url 'register' %}">
+            Register
+        </a>
+    </div>
 
-    </ul>
+
 
 </nav>
