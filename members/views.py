@@ -3,8 +3,11 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
  
+def baseview(request):
+    return render(request, 'base.html', {})
 
 def home_page(request):
     return render(request, 'home.html', {})
@@ -39,3 +42,7 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request,"authenticate/register.html",{'form':form})
+
+@login_required
+def profile(request): 
+    return render(request, 'authenticate/profile.html',{})
