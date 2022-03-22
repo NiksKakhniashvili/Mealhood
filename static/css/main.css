@@ -2,7 +2,9 @@ body, html{
     margin: 0;
     padding: 0;
     height: 92%;
-    background: rgb(238, 238, 238) !important;
+    /* background-image: url('../images/homebackground.jpg');
+    background-attachment: fixed; */
+    
 }
 
 
