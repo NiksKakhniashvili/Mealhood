@@ -1,10 +1,25 @@
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <div class="huge">
+            <div class="d-flex justify-content-center">
+
+                <h3 id="form-title">გინდა რომ გადაიხადო?</h3>
+
+            </div>
+            <div class="d-flex justify-content-center form_container">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <button class="btn btn-primary" type="submit" name="action" value="yes">კი</button>
+                    <button class="btn btn-primary" type="submit" name="action" value="no">არა</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+{%endblock%}
