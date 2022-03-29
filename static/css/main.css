@@ -38,7 +38,19 @@ body{
     align-items:center;
     margin-top: 170px;
     justify-content: center;
+    color: white;
 
+}
+
+.dropclass{
+    transform:scale(1.19);
+    display: flex;
+    margin-top: 170px;
+    align-items: center;
+    justify-content:center;
+}
+.text-muted {
+    color: white !important;
 }
 
 .huge{

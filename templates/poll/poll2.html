@@ -1,19 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="dropdown container">
+<!-- <div class="dropdown dropclass">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Restaurants
   </button>
-  <div class="dropdown-menu huge" aria-labelledby="dropdownMenuButton">
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <form method="POST" action="">
       {% csrf_token %}
-    <a class="dropdown-item" href="#">KFC</a>
-    <a class="dropdown-item" href="#">შაურმა</a>
-    <a class="dropdown-item" href="#">Macdonalds</a>
-    <a class="dropdown-item" href="#">Something else</a>
+      {% for a in food %}
+    <a class="dropdown-item" href="#" name ="action" value="{{a.id}}">{{ a }}</a>
+      {%endfor%}
+
     </form>
   </div>
-</div>
+  <input class="btn btn-primary" type="submit" value="Submit">
 
+</div> -->
+<div class="container">
+  <form method = "POST" action="">
+      {% csrf_token %}
+      <select class="form-select" aria-label="Default select example" name="restaurant_name" id="restaurant_name">
+          <option selected>გახსენით მენიუ</option>
+          {% for f in food %}
+              <option value={{ f }}>{{ f }}</option>
+          {% endfor %}
+          <option>სხვა</option>
+      </select>
+      {% if error %}
+        <h4>{{ error }}</h4>
+      {% endif %}
+      <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+</div>
 {%endblock%}

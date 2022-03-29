@@ -5,9 +5,6 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
- 
-def baseview(request):
-    return render(request, 'base.html', {})
 
 def home_page(request):
     return render(request, 'home.html', {})
